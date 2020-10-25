@@ -1,0 +1,21 @@
+{
+  "name": "note_pad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "notepad": "./bin/index.js"
+  },
+  "scripts": {
+    "notepad": "node ./bin/index.js"
+  },
+  "preferGlobal": true,
+  "author": "Inffinite",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "moment": "^2.29.1",
+    "node-notifier": "^8.0.0",
+    "sqlite3": "^5.0.0"
+  }
+}
