@@ -14,10 +14,12 @@ let args = process.argv.slice(2)
 setTimeout(() => {
     switch (args[0]) {
         case '--add-task':
+            if(!args[1])return console.log(Help.help())
             tasks.addTask(args[1])
             break;
 
         case '--add-note':
+            if(!args[1])return console.log(Help.help())
             notes.addNote(args[1])
             break;
 
@@ -30,6 +32,7 @@ setTimeout(() => {
             break;
 
         case '--done-task':
+            if(!args[1])return console.log(Help.help())
             tasks.markCompleted(args[1])
             break;
 
@@ -58,10 +61,12 @@ setTimeout(() => {
             break;
 
         case '--delete-task':
+            if(!args[1])return console.log(Help.help())
             tasks.deleteTask(args[1])
             break;
 
         case '--delete-note':
+            if(!args[1])return console.log(Help.help())
             notes.deleteNote(args[1])
             break;
 
