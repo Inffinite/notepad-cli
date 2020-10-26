@@ -5,6 +5,8 @@ tasks.initializeDb()
 notes.initializeDb()
 const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database('notes')
+const chalk = require('chalk')
+const Help = require('./help')
 
 let args = process.argv.slice(2)
 
@@ -42,6 +44,14 @@ setTimeout(() => {
         case '--purge-tasks':
             tasks.purgeAllTasks()
             break;
+        
+        case '--purge-complete-tasks':
+            tasks.purgeCompleteTasks()
+            break;
+
+        case '--purge-incomplete-tasks':
+            tasks.purgeInCompleteTasks()
+            break;
 
         case '--purge-notes':
             notes.purgeAllNotes()
@@ -55,7 +65,12 @@ setTimeout(() => {
             notes.deleteNote(args[1])
             break;
 
+        case '--help':
+            console.log(Help.help())
+            break;
+
         default:
+            console.log(Help.help())
             break;
     }
 }, 1000);

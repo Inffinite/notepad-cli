@@ -10,6 +10,9 @@
     "notepad": "node ./bin/index.js"
   },
   "preferGlobal": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Inffinite",
   "license": "ISC",
   "dependencies": {
